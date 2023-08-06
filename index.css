@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.heading {
+  font-family: Metropolis;
+  margin: auto;
+  border: 1px solid red;
+  max-width: 340px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  flex: 3;
+  color: #007f61;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.divider {
+  flex: 1;
+  max-width: 94px;
+  height: 2px;
+  background-color: #c8c8c8;
+}
+
+.bottom {
+  margin: auto;
+  max-width: 340px;
+  font-family: "Inter", sans-serif;
+}
+
+.bottom button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+
+  width: 100%;
+  height: 48px;
+  background-color: #007f61;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+
+.bottom > div {
+  display: flex;
+  font-size: 14px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottom > div > div {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+.bottom > div > div:first-child {
+  color: #007f61;
+}
