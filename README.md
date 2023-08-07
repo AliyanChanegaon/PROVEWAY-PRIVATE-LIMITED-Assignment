@@ -1,9 +1,8 @@
 # PROVEWAY-PRIVATE-LIMITED-Assignment
 
 
-<h1 align="center">Assignment </h1>
 
-<h3 align="center"> Daily Task Application </h3>
+
 
 <br />
 
