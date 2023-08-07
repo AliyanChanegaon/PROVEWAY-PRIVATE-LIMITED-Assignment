@@ -57,8 +57,9 @@
 ## Contact
 
 If you want to contact me, you can reach me through below handles. <br />
-[![linkedin]([https://img.shields.io/badge/Sufiyan_Shaikh-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sufiyan-shaikh-9bb808183/](https://www.linkedin.com/in/aliyan-chanegaon-79294114a/)
-[![GitHub]([https://img.shields.io/badge/Sufiyan_Shaikh-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/suFi7867](https://github.com/AliyanChanegaon)
+
+[![linkedin](https://img.shields.io/badge/Sufiyan_Shaikh-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aliyan-chanegaon-79294114a/)
+[![GitHub](https://img.shields.io/badge/Sufiyan_Shaikh-20232A?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/AliyanChanegaon)
 
 
 
