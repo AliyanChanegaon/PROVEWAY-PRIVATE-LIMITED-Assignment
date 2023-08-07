@@ -3,9 +3,9 @@ const Data = [
     pair: "1",
     discount: "50",
     discounted_price: "195.00",
-    original_price: "390.00",
+    original_price: "205.00",
     size: ["S", "M", "L"],
-    color: ["Red", "Green", "Blue"],
+    color: ["Colour", "Red", "Green", "Blue"],
   },
   {
     pair: "2",
@@ -13,7 +13,7 @@ const Data = [
     discounted_price: "345.00",
     original_price: "195.00",
     size: ["S", "M", "L"],
-    color: ["Red", "Green", "Blue"],
+    color: ["Colour", "Red", "Green", "Blue"],
     extra: "Most Popular",
   },
   {
@@ -22,16 +22,18 @@ const Data = [
     discounted_price: "528.00",
     original_price: "195.00",
     size: ["S", "M", "L"],
-    color: ["Red", "Green", "Blue"],
+    color: ["Colour", "Red", "Green", "Blue"],
   },
 ];
 
 const content = document.querySelector(".main-content");
 const form = document.createElement("form");
 form.setAttribute("id", "container");
-const button=document.querySelector("#button").addEventListener("click",()=>{
-  alert("Added to Cart");
-})
+const button = document
+  .querySelector("#button")
+  .addEventListener("click", () => {
+    alert("Added to Cart");
+  });
 let total = document.querySelector("#total");
 total.innerText = "0";
 
@@ -52,6 +54,7 @@ const UpdatedData = () => {
     input.addEventListener("click", (e) => {
       myFunction(e);
     });
+
     const inputSibDiv = document.createElement("div");
     const sibDivP1 = document.createElement("p");
     sibDivP1.innerText = `${el.pair} Pair`;

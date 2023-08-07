@@ -287,4 +287,13 @@ form {
     height: 1px;
     background-color: #c8c8c8;
   }
+  .card > div > div:first-child > div > p:nth-child(2) {
+    font-size:15px;
+  }
+  .card > div > div:nth-child(2) {
+    gap: 0px;
+  }
+  .card > div > div:nth-child(2) > div > p:first-child {
+    font-size: small;
+  }
 }
