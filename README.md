@@ -63,7 +63,7 @@ If you want to contact me, you can reach me through below handles. <br />
 
 
 
-© 2022 Sufiyan Shaikh
+© 2023 Aliyan Chanegaon
 
 
 
