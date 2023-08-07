@@ -43,7 +43,12 @@
 
 ## Glimpses of Application 🙈 :
 
-    <img maxW="50%" src="https://i.ibb.co/d2mGqBx/hellooo.png"  alt="home" />
+   <p align="center">
+  <img src="https://i.ibb.co/d2mGqBx/hellooo.png" alt="home" />
+
+  
+  
+</p>
    
  
 <br />
