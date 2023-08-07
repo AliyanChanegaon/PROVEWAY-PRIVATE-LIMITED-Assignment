@@ -38,55 +38,14 @@
 
 <br />
 
-## Screens 
-- Dashboard
-- Login
-- Register
 
-<br />
 
-## 🚀 Features
-- Login and Signup User Account
-- Highly Optimized Code Frontend + Backend Privateroutes
-- Cant Add more Than 5 Task each Day
-- get Tasks According to Dates
-- Add Futures Task  
-- Cart Update Quantities 
-- Password Hashing 
-- JWT
-
-<br />
 
 ## Glimpses of Application 🙈 :
 
-
-
-
-
-
-
-
-
-<table>
-  <tr>
-    <td><img maxW="50%" src="https://i.ibb.co/dJs88gg/Capture.png"  alt="home" /></td>
-    <td><img maxW="50%" src="https://i.ibb.co/7y8qFdD/Capture2.png"  alt="coupons" /></td>
-  </tr>
-  <tr>
-  <td><img src="https://i.ibb.co/Jc3xXfy/Capture4.png"  alt="men" /></td>
-   <td><img src="https://i.ibb.co/CJdBMPq/Capture3.png"  alt="allProducts" /></td>
-    
-  </tr>
- 
-  <tr>
-    <td><img src="https://i.ibb.co/JtK8sw0/Capture5.png"  alt="women" /></td>
-    <td><img src="https://i.ibb.co/FVS3nXC/Capture555.png"  alt="kids" /></td>
-  </tr>
+    <img maxW="50%" src="https://i.ibb.co/dJs88gg/Capture.png](https://i.ibb.co/d2mGqBx/hellooo.png"  alt="home" />
    
-
-
-</table>
-
+ 
 <br />
 
 
