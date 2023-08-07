@@ -31,19 +31,164 @@ const Data = [
 
 const content = document.querySelector(".main-content");
 const form = document.createElement("form");
+form.setAttribute("id", "container");
 content.append(form);
 
-Data.forEach((el, idx) => {
-  const input = document.createElement("input");
-  input.addEventListener("change",function(e){
-    myFunction(e)
-  })
-  input.setAttribute("type", "radio");
-  input.setAttribute("name", "radioGroup"); 
-  const label = document.createElement("label");
-  label.innerText = el.pair;
+const UpdatedData = () => {
+  Data.forEach((el, idx) => {
+    const containerItem = document.createElement("div");
 
-  form.append(input);
-  form.append(label);
-});
+    containerItem.setAttribute("class", "card");
 
+    const topDiv = document.createElement("div");
+    const subTopDiv1 = document.createElement("div");
+    const input = document.createElement("input");
+    input.setAttribute("type", "radio");
+    input.setAttribute("value", el.pair);
+    input.setAttribute("name", `choices`);
+    input.addEventListener("click", (e) => {
+      myFunction(e);
+    });
+    const inputSibDiv = document.createElement("div");
+    const sibDivP1 = document.createElement("p");
+    sibDivP1.innerText = `${el.pair} Pair`;
+    const sibDivP2 = document.createElement("p");
+    sibDivP2.innerText = `DKK ${el.discounted_price}`;
+    inputSibDiv.append(sibDivP1, sibDivP2);
+    subTopDiv1.append(input, inputSibDiv);
+
+    const subTopDiv2 = document.createElement("div");
+    const dividerDiv = document.createElement("div");
+    dividerDiv.setAttribute("class", "line-through-divider");
+    const subTopDiv2Text1 = document.createElement("p");
+    subTopDiv2Text1.innerText = `DKK ${el.original_price}`;
+    const discountDiv = document.createElement("div");
+    if (el.extra) {
+      const discountDivText1 = document.createElement("p");
+      discountDivText1.innerText = `${el.extra}`;
+      discountDivText1.style.color = "#007f61";
+      const discountDivText2 = document.createElement("p");
+      discountDivText2.innerText = `${el.discount}% OFF`;
+      discountDiv.append(discountDivText1, discountDivText2);
+    } else {
+      const discountDivText = document.createElement("p");
+      discountDivText.innerText = `${el.discount}% OFF`;
+      discountDiv.append(discountDivText);
+    }
+
+    subTopDiv2.append(dividerDiv, subTopDiv2Text1, discountDiv);
+
+    topDiv.append(subTopDiv1, subTopDiv2);
+
+    const bottomDiv = document.createElement("div");
+    bottomDiv.setAttribute("id", `hidden-${++idx}`);
+    bottomDiv.style.display = "none";
+    const mainDiv = document.createElement("div");
+    mainDiv.setAttribute("id", "details-box");
+
+    const subDiv1 = document.createElement("div");
+    const sub1 = document.createElement("div");
+    const sub2 = document.createElement("div");
+    sub2.innerText = "Sizes";
+
+    const sub3 = document.createElement("div");
+    sub3.innerText = "Colour";
+
+    subDiv1.append(sub1, sub2, sub3);
+    mainDiv.append(subDiv1);
+
+    const Pairs = new Array(Number(el.pair)).fill(0);
+
+    Pairs.forEach((item, idx) => {
+      const boxItem = document.createElement("div");
+      boxItem.setAttribute("class", "detail-box-items");
+      const boxItemDiv1 = document.createElement("div");
+      boxItemDiv1.innerText = `#${++idx}`;
+
+      const boxItemDiv2 = document.createElement("div");
+      const boxItemDiv2Select = document.createElement("select");
+      boxItemDiv2Select.setAttribute("name", "Size");
+      boxItemDiv2Select.setAttribute("id", "size");
+
+      const sizesSelect = el.size.forEach((element) => {
+        const option = document.createElement("option");
+        option.setAttribute("value", element);
+        option.innerText = element;
+        boxItemDiv2Select.append(option);
+      });
+      boxItemDiv2.append(boxItemDiv2Select);
+
+      const boxItemDiv3 = document.createElement("div");
+      const boxItemDiv3Select = document.createElement("select");
+      boxItemDiv3Select.setAttribute("name", "Colour");
+      boxItemDiv3Select.setAttribute("id", "color");
+      const sizesSelect2 = el.color.forEach((element) => {
+        const option = document.createElement("option");
+        option.setAttribute("value", element);
+        option.innerText = element;
+        boxItemDiv3Select.append(option);
+      });
+      boxItemDiv3.append(boxItemDiv3Select);
+
+      boxItem.append(boxItemDiv1, boxItemDiv2, boxItemDiv3);
+      mainDiv.append(boxItem);
+      bottomDiv.append(mainDiv);
+
+      containerItem.append(topDiv, bottomDiv);
+    });
+
+    form.append(containerItem);
+  });
+};
+
+UpdatedData();
+
+// const DisplayData = () => {
+//   Data.forEach((el, idx) => {
+//     const input = document.createElement("input");
+//     input.addEventListener("change", function (e) {
+//       myFunction(e);
+//     });
+//     input.setAttribute("type", "radio");
+//     input.setAttribute("value", el.pair);
+
+//     const item = document.createElement("div");
+//     item.setAttribute("class", "item");
+//     item.append(input);
+
+//     const main_div = document.createElement("div");
+//     const sub_div = document.createElement("div");
+//     const name = document.createElement("p");
+//     name.innerText = `${el.pair}Pair`;
+//     const price = document.createElement("p");
+//     price.innerText = `DKK${el.discounted_price}`;
+//     const discount = document.createElement("p");
+//     discount.innerText = `${el.discount}% OFF`;
+//     sub_div.append(name, price);
+//     main_div.append(sub_div, discount);
+
+//     item.append(main_div);
+//     container.append(item);
+//   });
+// };
+
+// DisplayData();
+
+function expanded(value) {
+  document.querySelectorAll;
+}
+
+function myFunction(e) {
+  Data.forEach((el) => {
+    if (e.target.value === el.pair) {
+      let div = document.querySelector(`#hidden-${e.target.value}`);
+      div.style.display = "flex";
+      div.parentNode.style.backgroundColor = "#F4FBF9";
+      div.parentNode.style.borderColor = "#007F61";
+    } else {
+      let div = document.querySelector(`#hidden-${el.pair}`);
+      div.style.display = "none";
+      div.parentNode.style = "none";
+    }
+  });
+}
