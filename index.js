@@ -6,32 +6,35 @@ const Data = [
     original_price: "390.00",
     size: ["S", "M", "L"],
     color: ["Red", "Green", "Blue"],
-    total: "",
   },
   {
     pair: "2",
     discount: "40",
-    discounted_price: "588.00",
+    discounted_price: "345.00",
     original_price: "195.00",
     size: ["S", "M", "L"],
     color: ["Red", "Green", "Blue"],
     extra: "Most Popular",
-    total: "360.00",
   },
   {
     pair: "3",
     discount: "60",
-    discounted_price: "386.00",
-    original_price: "528.00",
+    discounted_price: "528.00",
+    original_price: "195.00",
     size: ["S", "M", "L"],
     color: ["Red", "Green", "Blue"],
-    total: "",
   },
 ];
 
 const content = document.querySelector(".main-content");
 const form = document.createElement("form");
 form.setAttribute("id", "container");
+const button=document.querySelector("#button").addEventListener("click",()=>{
+  alert("Added to Cart");
+})
+let total = document.querySelector("#total");
+total.innerText = "0";
+
 content.append(form);
 
 const UpdatedData = () => {
@@ -61,6 +64,10 @@ const UpdatedData = () => {
     const dividerDiv = document.createElement("div");
     dividerDiv.setAttribute("class", "line-through-divider");
     const subTopDiv2Text1 = document.createElement("p");
+    subTopDiv2Text1.setAttribute(
+      "class",
+      `discounted-price-${Number(el.pair)}`
+    );
     subTopDiv2Text1.innerText = `DKK ${el.original_price}`;
     const discountDiv = document.createElement("div");
     if (el.extra) {
@@ -81,7 +88,7 @@ const UpdatedData = () => {
     topDiv.append(subTopDiv1, subTopDiv2);
 
     const bottomDiv = document.createElement("div");
-    bottomDiv.setAttribute("id", `hidden-${++idx}`);
+    bottomDiv.setAttribute("id", `hidden-${Number(el.pair)}`);
     bottomDiv.style.display = "none";
     const mainDiv = document.createElement("div");
     mainDiv.setAttribute("id", "details-box");
@@ -143,37 +150,6 @@ const UpdatedData = () => {
 
 UpdatedData();
 
-// const DisplayData = () => {
-//   Data.forEach((el, idx) => {
-//     const input = document.createElement("input");
-//     input.addEventListener("change", function (e) {
-//       myFunction(e);
-//     });
-//     input.setAttribute("type", "radio");
-//     input.setAttribute("value", el.pair);
-
-//     const item = document.createElement("div");
-//     item.setAttribute("class", "item");
-//     item.append(input);
-
-//     const main_div = document.createElement("div");
-//     const sub_div = document.createElement("div");
-//     const name = document.createElement("p");
-//     name.innerText = `${el.pair}Pair`;
-//     const price = document.createElement("p");
-//     price.innerText = `DKK${el.discounted_price}`;
-//     const discount = document.createElement("p");
-//     discount.innerText = `${el.discount}% OFF`;
-//     sub_div.append(name, price);
-//     main_div.append(sub_div, discount);
-
-//     item.append(main_div);
-//     container.append(item);
-//   });
-// };
-
-// DisplayData();
-
 function expanded(value) {
   document.querySelectorAll;
 }
@@ -182,11 +158,25 @@ function myFunction(e) {
   Data.forEach((el) => {
     if (e.target.value === el.pair) {
       let div = document.querySelector(`#hidden-${e.target.value}`);
+      let price = document.querySelector(
+        `.discounted-price-${Number(el.pair)}`
+      );
+      let total = document.querySelector("#total");
+
+      total.innerText = `DKK ${Number(el.discounted_price + 15).toFixed(2)}`;
+      price.style.color = "#9F9F9F";
+      price.style.textDecoration = "line-through";
       div.style.display = "flex";
+      div.parentNode.style.transition =
+        "background-color 2s ease-out, border-color 2s ease-out";
       div.parentNode.style.backgroundColor = "#F4FBF9";
       div.parentNode.style.borderColor = "#007F61";
     } else {
       let div = document.querySelector(`#hidden-${el.pair}`);
+      let price = document.querySelector(
+        `.discounted-price-${Number(el.pair)}`
+      );
+      price.style.color = "white";
       div.style.display = "none";
       div.parentNode.style = "none";
     }
