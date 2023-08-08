@@ -39,7 +39,7 @@ total.innerText = "0";
 
 content.append(form);
 
-const UpdatedData = () => {
+const displayData = () => {
   Data.forEach((el, idx) => {
     const containerItem = document.createElement("div");
 
@@ -52,7 +52,7 @@ const UpdatedData = () => {
     input.setAttribute("value", el.pair);
     input.setAttribute("name", `choices`);
     input.addEventListener("click", (e) => {
-      myFunction(e);
+      handleChange(e);
     });
 
     const inputSibDiv = document.createElement("div");
@@ -120,7 +120,7 @@ const UpdatedData = () => {
       boxItemDiv2Select.setAttribute("name", "Size");
       boxItemDiv2Select.setAttribute("id", "size");
 
-      const sizesSelect = el.size.forEach((element) => {
+      el.size.forEach((element) => {
         const option = document.createElement("option");
         option.setAttribute("value", element);
         option.innerText = element;
@@ -132,7 +132,7 @@ const UpdatedData = () => {
       const boxItemDiv3Select = document.createElement("select");
       boxItemDiv3Select.setAttribute("name", "Colour");
       boxItemDiv3Select.setAttribute("id", "color");
-      const sizesSelect2 = el.color.forEach((element) => {
+      el.color.forEach((element) => {
         const option = document.createElement("option");
         option.setAttribute("value", element);
         option.innerText = element;
@@ -151,13 +151,9 @@ const UpdatedData = () => {
   });
 };
 
-UpdatedData();
+displayData();
 
-function expanded(value) {
-  document.querySelectorAll;
-}
-
-function myFunction(e) {
+function handleChange(e) {
   Data.forEach((el) => {
     if (e.target.value === el.pair) {
       let div = document.querySelector(`#hidden-${e.target.value}`);
