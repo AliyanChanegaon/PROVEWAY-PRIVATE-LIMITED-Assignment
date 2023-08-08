@@ -70,21 +70,6 @@ form {
   flex: 2;
 }
 
-.custom-select {
-  appearance: none; /* Hide default arrow in modern browsers */
-  -webkit-appearance: none; /* Hide default arrow in WebKit browsers */
-  -moz-appearance: none; /* Hide default arrow in Firefox */
-
-  width: 10px;
-  /* Add your custom styling */
-  /* */
-  /* border: 1px solid #ccc;
-  border-radius: 4px;  */
-  background-color: #fff;
-  background-image: url("./img/down-arrow.png");
-  background-repeat: no-repeat;
-  background-position: right center;
-}
 
 #expanded {
   display: initial;
